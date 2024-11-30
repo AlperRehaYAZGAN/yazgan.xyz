@@ -1,11 +1,14 @@
-import * as config from '$lib/config'
-import type { Post } from '$lib/types'
+import * as config from '$lib/config';
+import { GetPosts } from '$lib/utils/get-posts';
 
-export async function GET({ fetch }) {
-	const response = await fetch('api/posts')
-	const posts: Post[] = await response.json()
+// for ssg support you need to add explicit export for every api route
+export const prerender = true;
 
-	const headers = { 'Content-Type': 'application/xml' }
+// e: RequestEvent
+export async function GET() {
+	const posts = await GetPosts();
+
+	const headers = { 'Content-Type': 'application/xml' };
 
 	const xml = `
 		<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
@@ -20,8 +23,8 @@ export async function GET({ fetch }) {
 						<item>
 							<title>${post.title}</title>
 							<description>${post.description}</description>
-							<link>${config.url}/${post.slug}</link>
-							<guid isPermaLink="true">${config.url}/${post.slug}</guid>
+							<link>${config.url}/blog/${post.slug}</link>
+							<guid isPermaLink="true">${config.url}/blog/${post.slug}</guid>
 							<pubDate>${new Date(post.date).toUTCString()}</pubDate>
 						</item>
 					`
@@ -29,7 +32,7 @@ export async function GET({ fetch }) {
 					.join('')}
 			</channel>
 		</rss>
-	`.trim()
+	`.trim();
 
-	return new Response(xml, { headers })
+	return new Response(xml, { headers });
 }
