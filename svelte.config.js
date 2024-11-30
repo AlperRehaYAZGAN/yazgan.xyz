@@ -20,7 +20,9 @@ const config = {
 			extensions: ['.md'],
 
 			layout: {
-				blog: join(process.cwd(), 'src/routes/blog/+layout.svelte')
+				term: join(process.cwd(), 'src/lib/layouts/blog-layout-term.svelte'),
+				default: join(process.cwd(), 'src/lib/layouts/blog-layout-default.svelte'),
+				_: join(process.cwd(), 'src/lib/layouts/blog-layout-default.svelte')
 			},
 
 			highlight: {
@@ -81,9 +83,9 @@ const config = {
 			// these options are set automatically — see below
 			pages: 'build',
 			assets: 'build',
-			fallback: "404.html",
+			fallback: '404.html',
 			precompress: false,
-			strict: true,
+			strict: true
 		}),
 		paths: {
 			base: ''

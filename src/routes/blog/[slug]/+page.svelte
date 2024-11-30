@@ -29,10 +29,4 @@
 	<meta name="twitter:url" content={`https://sveltekit-blog.vercel.app/blog/${meta.slug}`} />
 </svelte:head>
 
-<!-- Main Content -->
-<main class="flex w-full flex-col p-8">
-	<!-- Header -->
-	<div class="prose lg:prose-xl">
-		<svelte:component this={content} />
-	</div>
-</main>
+<svelte:component this={content} />

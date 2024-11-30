@@ -13,7 +13,7 @@ coverHeight: 720
 excerpt: I will share my thoughts and experiences on this blog
 ---
 
-## My New Journey
+### My New Journey
 
 I'm starting a new journey on this blog. I will share my thoughts and experiences with you. I hope you enjoy reading my posts.
 

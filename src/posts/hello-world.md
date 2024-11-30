@@ -13,8 +13,6 @@ coverHeight: 720
 excerpt: This post is my first blog post on yazgan.xyz
 ---
 
-## Table of Contents
-
 ### Hello World
 
 This is my first blog post on yazgan.xyz. I'm excited to share my thoughts with you.

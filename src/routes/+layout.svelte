@@ -51,7 +51,7 @@
 
 	<main class="mx-auto flex flex-col content-center items-center justify-center border-t-2">
 		<!-- Footer -->
-		<footer class="flex max-w-md border-gray-200 pt-8 text-center text-sm text-gray-500">
+		<footer class="flex max-w-md border-gray-200 pt-4 text-center text-sm text-gray-500">
 			<p>
 				u can find me on
 				<a href="https://github.com/AlperRehaYAZGAN" class="text-blue-500 hover:underline">GitHub</a
