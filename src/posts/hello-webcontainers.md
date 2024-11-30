@@ -8,7 +8,7 @@ date: '2024-11-02'
 updated: '2024-11-02'
 categories:
   - 'webcontainers'
-coverImage: 'https://cdn.pixabay.com/photo/2017/02/18/08/49/island-2076832_1280.jpg'
+coverImage: https://cdn.pixabay.com/photo/2017/02/18/08/49/island-2076832_1280.jpg
 coverWidth: 1080
 coverHeight: 720
 excerpt: In browser experience with wasm containers

@@ -13,18 +13,16 @@
 	<meta name="keywords" content={site.keywords?.join(', ')} />
 	<meta name="author" content={site.author} />
 
-	<meta property="og:title" content={site.title} />
-	<meta property="og:description" content={site.description} />
-	<meta property="og:image" content={site.image} />
-	<meta property="og:url" content={site.url} />
-	<meta property="og:type" content="website" />
+	<meta property="og:title" content={meta.title} />
+	<meta property="og:description" content={meta.description} />
+	<meta property="og:image" content={meta.coverImage} />
+	<meta property="og:image:width" content={meta.coverWidth} />
+	<meta property="og:image:height" content={meta.coverHeight} />
+	<meta property="og:url" content={meta.coverImage} />
+	<meta property="og:type" content="article" />
 
-	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@alperreha" />
 	<meta name="twitter:creator" content="@alperreha" />
-	<meta name="twitter:title" content={site.title} />
-	<meta name="twitter:description" content={site.description} />
-	<meta name="twitter:image" content={site.image} />
 
 	<link rel="icon" type="image/png" href="/favicon.png" />
 	<link rel="apple-touch-icon" href="/favicon.png" />
