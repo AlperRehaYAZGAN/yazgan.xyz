@@ -1,11 +1,76 @@
+import { transformerCopyButton } from '@rehype-pretty/transformers';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import { join } from 'path';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import remarkToc from 'remark-toc';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import { createHighlighter } from 'shiki';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+	// Ensures both .svelte and .md files are treated as components (can be imported and used anywhere, or used as pages)
+	extensions: ['.svelte', '.md'],
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({
+			// The default mdsvex extension is .svx; this overrides that.
+			extensions: ['.md'],
+
+			layout: {
+				blog: join(process.cwd(), 'src/routes/blog/+layout.svelte')
+			},
+
+			highlight: {
+				highlighter: async (code, lang = 'text') => {
+					const highlighter = await createHighlighter({
+						langs: [
+							'bash',
+							'go',
+							'html',
+							'css',
+							'js',
+							'java',
+							'javascript',
+							'typescript',
+							'json',
+							'c',
+							'c++',
+							'python',
+							'c#',
+							'php',
+							'rust',
+							'ruby',
+							'docker',
+							'dockerfile'
+						],
+						themes: ['github-dark']
+					});
+					const html = escapeSvelte(
+						highlighter.codeToHtml(code, {
+							lang: lang,
+							themes: {
+								light: 'github-dark',
+								dark: 'github-dark'
+							},
+							transformers: [
+								transformerCopyButton({
+									visibility: 'always',
+									feedbackDuration: 3_000
+								})
+							]
+						})
+					);
+					return `{@html \`${html}\`}`;
+				}
+			},
+			remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+			// Adds IDs to headings, and anchor links to those IDs. Note: must stay in this order to work.
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+		})
+	],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
