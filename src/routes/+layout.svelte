@@ -2,32 +2,8 @@
 	import '../app.css';
 	import Transition from './transition.svelte';
 
-	import { site } from '$lib/config';
-
 	let { children, data } = $props();
 </script>
-
-<svelte:head>
-	<title>{site.title}</title>
-	<meta name="description" content={site.description} />
-	<meta name="keywords" content={site.keywords?.join(', ')} />
-	<meta name="author" content={site.author} />
-
-	<meta property="og:title" content={meta.title} />
-	<meta property="og:description" content={meta.description} />
-	<meta property="og:image" content={meta.coverImage} />
-	<meta property="og:image:width" content={meta.coverWidth} />
-	<meta property="og:image:height" content={meta.coverHeight} />
-	<meta property="og:url" content={meta.coverImage} />
-	<meta property="og:type" content="article" />
-
-	<meta name="twitter:site" content="@alperreha" />
-	<meta name="twitter:creator" content="@alperreha" />
-
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<link rel="apple-touch-icon" href="/favicon.png" />
-	<link rel="manifest" href="/manifest.json" />
-</svelte:head>
 
 <div class="min-h-screen bg-white">
 	<!-- Top Banner -->

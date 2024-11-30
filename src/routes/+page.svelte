@@ -1,9 +1,30 @@
 <script lang="ts">
 	import { IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-svelte';
 	const { data } = $props();
+	import { site } from '$lib/config';
 
 	const posts = data.posts || [];
 </script>
+
+<svelte:head>
+	<title>{site.title}</title>
+	<meta name="description" content={site.description} />
+	<meta name="keywords" content={site.keywords?.join(', ')} />
+	<meta name="author" content={site.author} />
+
+	<meta property="og:title" content={site.title} />
+	<meta property="og:description" content={site.description} />
+	<meta property="og:image" content={site.image} />
+	<meta property="og:url" content={site.url} />
+	<meta property="og:type" content="article" />
+
+	<meta name="twitter:site" content="@alperreha" />
+	<meta name="twitter:creator" content="@alperreha" />
+
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/favicon.png" />
+	<link rel="manifest" href="/manifest.json" />
+</svelte:head>
 
 <!-- Main Content -->
 <main class="flex flex-col bg-blue-50 p-12">
