@@ -5,8 +5,8 @@ import { escapeSvelte, mdsvex } from 'mdsvex';
 import { join } from 'path';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import remarkToc from 'remark-toc';
-import remarkUnwrapImages from 'remark-unwrap-images';
+// import remarkToc from 'remark-toc';
+// import remarkUnwrapImages from 'remark-unwrap-images';
 import { createHighlighter } from 'shiki';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -66,7 +66,7 @@ const config = {
 					return `{@html \`${html}\`}`;
 				}
 			},
-			remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+			// remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
 			// Adds IDs to headings, and anchor links to those IDs. Note: must stay in this order to work.
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 		})
