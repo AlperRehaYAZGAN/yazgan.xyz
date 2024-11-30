@@ -1,5 +1,5 @@
 <script>
-	import WebContainerJS from '$lib/components/webcontainers/WebContainerJS.svelte';
+	import WebContainerJS from '$lib/components/webcontainers/WebcontainerJS.svelte';
 	let { children, data } = $props();
 </script>
 
