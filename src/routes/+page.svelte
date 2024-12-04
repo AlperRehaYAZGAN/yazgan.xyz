@@ -1,8 +1,7 @@
 <script lang="ts">
+	import { site } from '$lib/config';
 	import { IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-svelte';
 	const { data } = $props();
-	import { site } from '$lib/config';
-
 	const posts = data.posts || [];
 </script>
 
