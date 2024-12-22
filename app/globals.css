@@ -1,0 +1,37 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+/* Add @layer to Tailwind Base to prevent Preflight conflicts */
+@layer base {
+  .grecaptcha-badge {
+    visibility: hidden !important;
+  }
+}
+@layer tailwind {
+  @tailwind base;
+}
+
+/* Mantine core */
+@import '@mantine/core/styles.css';
+@import '@mantine/code-highlight/styles.css'; /* 
+* Thanks to @layer rule, tailwind base get lower "priority" 
+* than mantine css rules even if they have same specificity.
+* Thanks to this, we CAN use preflight reset from tailwind.
+*/
+/* 
+Example usage of mixins with mantine breakpoints
+.demo {
+  @mixin smaller-than $mantine-breakpoint-sm {
+    color: red;
+  }
+
+  @mixin larger-than $mantine-breakpoint-sm {
+    color: blue;
+  }
+} */
+/* 
+example usage of color scheme function
+.demo {
+  color: light-dark(red, blue);
+} */

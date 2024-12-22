@@ -1,0 +1,30 @@
+# Building a Neubrutalist Button Component
+
+Neubrutalism is a design trend that combines bold colors, sharp contrasts, and pronounced shadows. Let's create a simple button component that follows this style.
+
+## The Component
+
+Here's a simple implementation of a neubrutalist button:
+
+```jsx
+// Example Usage
+<button className="px-4 py-2 font-bold text-black bg-yellow-300 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all">
+    Click Me!
+</button>
+```
+
+```jsx
+// With different colors
+<button className="px-4 py-2 font-bold text-white bg-pink-500 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all">
+    Submit
+</button>
+```
+
+
+```jsx
+// Disabled state
+<button disabled className="px-4 py-2 font-bold text-gray-600 bg-gray-300 border-4 border-gray-600 cursor-not-allowed">
+    Loading...
+</button>
+```
+
