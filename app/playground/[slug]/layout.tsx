@@ -61,7 +61,8 @@ export default function MdxPlaygroundLayout({ children }: { children: React.Reac
 
               {children}
 
-              <CardSection p="xs" withBorder>
+              {/* Enable below after multi-step course creation */}
+              {/* <CardSection p="xs" withBorder>
                 <Group justify="flex-end" px="sm" align="center">
                   <Button
                     rightSection={<IconArrowRight size="1.25rem" stroke={1.5} />}
@@ -73,7 +74,7 @@ export default function MdxPlaygroundLayout({ children }: { children: React.Reac
                     Next Step
                   </Button>
                 </Group>
-              </CardSection>
+              </CardSection> */}
             </Card>
           </Pane>
           <Pane minSize="25%" maxSize="75%">
