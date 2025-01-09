@@ -8,7 +8,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { Group, Stack, Title, TypographyStylesProvider } from '@mantine/core';
-import posts from '@/posts/posts.json';
+import posts from '@/posts/posts';
 
 const MINHEIGHT = 'calc(100vh - 6rem)';
 

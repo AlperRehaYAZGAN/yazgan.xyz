@@ -14,7 +14,10 @@
 
 /* Mantine core */
 @import '@mantine/core/styles.css';
-@import '@mantine/code-highlight/styles.css'; /* 
+@import '@mantine/code-highlight/styles.css'; 
+@import '@mantine/core/styles/UnstyledButton.layer.css';
+@import '@mantine/core/styles/Button.layer.css';
+/* 
 * Thanks to @layer rule, tailwind base get lower "priority" 
 * than mantine css rules even if they have same specificity.
 * Thanks to this, we CAN use preflight reset from tailwind.

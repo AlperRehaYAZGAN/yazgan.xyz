@@ -1,0 +1,70 @@
+### Nodejs-1: Webcontainers Initial Setup 
+
+In this tutorial, we will introduce you to WebContainers and show you how to run your first Node.js application within a browser environment. WebContainers allow you to create full-stack Node.js environments that run entirely in your browser, providing a seamless development experience.
+
+To get started, we will run a simple Node.js application that prints a message to the console. Open the terminal in the right section and enter the following command:
+
+```sh
+console.log("Hello from webcontainers")
+```
+
+After running the command, you should see the message "Hello from webcontainers" printed in the console. This demonstrates the power and convenience of using WebContainers for your Node.js development.
+
+Now let's go deeper and create a express server using WebContainers.
+
+#### Creating an Express Server  
+
+To create an Express server using WebContainers, follow these steps:
+
+1. Create a new directory for your project and navigate into it:
+
+```sh
+mkdir express-server
+cd express-server
+```
+
+2. Create npm project
+
+```sh
+npm init -y
+```
+
+3. Install Express:
+
+```sh
+npm install express
+```
+
+4. Create a new file named `index.js` and add the following code:
+
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello from Express Server!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+```
+
+5. Run the server using the following command:
+
+```sh
+node index.js
+```
+
+After running the command, you should see the message "Server running at http://localhost:3000" printed in the console. You can now access your Express server by calling from terminal using curl:
+
+```sh
+curl http://localhost:3000
+```
+
+You should see the message "Hello from Express Server!" displayed in the terminal. This demonstrates how easy it is to create and run an Express server using WebContainers.
+
+And also it automatically opens the browser with the output.  
+
+Nice work 👏🏻.

@@ -17,7 +17,7 @@ import {
   Title,
   TypographyStylesProvider,
 } from '@mantine/core';
-import posts from '@/posts/posts.json';
+import posts from '@/posts/posts';
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {

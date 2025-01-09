@@ -8,7 +8,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { Stack, TypographyStylesProvider } from '@mantine/core';
-import posts from '@/posts/posts.json';
+import posts from '@/posts/posts';
 
 const MINHEIGHT = 'calc(100vh - 6rem)';
 
@@ -35,7 +35,7 @@ export default async function SnippContentPage({ params }: any) {
 
   // const BlogPost = (await import(`@/posts/${slug}.mdx`)).default;
   // const metadata = (await import(`@/posts/${slug}.mdx`)).metadata;
-  const metadata = posts.find((post) => post.slug === slug);
+  // const metadata = posts?.find((post) => post.slug === slug);
 
   const content = readFileSync(join(process.cwd(), 'posts', `${slug}.mdx`), 'utf8');
 

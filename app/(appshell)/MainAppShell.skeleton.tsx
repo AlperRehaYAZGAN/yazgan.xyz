@@ -9,6 +9,7 @@ import {
   Group,
   Space,
 } from '@mantine/core';
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 
 export async function MainAppShell({ children }: { children: any }) {
   return (
@@ -47,16 +48,13 @@ export async function MainAppShell({ children }: { children: any }) {
               yazgan.xyz
             </Badge>
 
-            <Button
-              component="a"
-              href="/"
-              variant="outline"
-              size="compact-sm"
-              color="dark.6"
-              radius="xs"
-            >
-              Home
-            </Button>
+            <Group gap="xs">
+              <ColorSchemeToggle />
+
+              <Button component="a" href="/" variant="outline" size="compact-sm" radius="xs">
+                Home
+              </Button>
+            </Group>
 
             {/* <ActionIcon
               component={Link}
